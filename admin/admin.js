@@ -1,4 +1,4 @@
-const API = "https://elite-fc-backend.onrender.com/";
+const API = "https://elite-fc-backend.onrender.com/api";
 
 const token = localStorage.getItem("eliteAdminToken");
 

@@ -9,7 +9,7 @@ let players = [];
 
 async function getPlayers() {
   try {
-    const response = await fetch("https://elite-fc-backend.onrender.com/");
+    const response = await fetch("https://elite-fc-backend.onrender.com/api");
 
     const data = await response.json();
 
