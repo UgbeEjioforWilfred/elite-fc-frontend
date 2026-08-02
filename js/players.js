@@ -1,3 +1,5 @@
+const API = "https://elite-fc-backend.onrender.com/api";
+
 const container = document.getElementById("players-container");
 
 const searchInput = document.getElementById("searchPlayer");
@@ -5,11 +7,13 @@ const teamFilter = document.getElementById("teamFilter");
 
 let players = [];
 
+// ==========================
 // FETCH PLAYERS FROM BACKEND
+// ==========================
 
 async function getPlayers() {
   try {
-    const response = await fetch("https://elite-fc-backend.onrender.com/api");
+    const response = await fetch(`${API}/players`);
 
     const data = await response.json();
 
@@ -21,7 +25,9 @@ async function getPlayers() {
   }
 }
 
+// ==========================
 // DISPLAY PLAYERS
+// ==========================
 
 function displayPlayers(playerList) {
   container.innerHTML = "";
@@ -41,9 +47,11 @@ function displayPlayers(playerList) {
 
     <div class="player-card" id="${player._id}">
 
+
       <div class="player-image">
 
-        <img src="players image/${player.image}" 
+        <img 
+        src="players image/${player.image}" 
         alt="${player.name}">
 
       </div>
@@ -51,7 +59,10 @@ function displayPlayers(playerList) {
 
       <div class="player-info">
 
-        <h2>${player.name}</h2>
+
+        <h2>
+        ${player.name}
+        </h2>
 
 
         <p>
@@ -64,7 +75,9 @@ function displayPlayers(playerList) {
         </p>
 
 
+
         <div class="player-stats">
+
 
           <span>
           ⚽ Goals ${player.goals}
@@ -80,10 +93,12 @@ function displayPlayers(playerList) {
           🏃 Matches ${player.matches}
           </span>
 
+
         </div>
 
 
       </div>
+
 
     </div>
 
@@ -91,7 +106,9 @@ function displayPlayers(playerList) {
   });
 }
 
+// ==========================
 // SEARCH + FILTER
+// ==========================
 
 function filterPlayers() {
   const searchValue = searchInput.value.toLowerCase();
@@ -112,6 +129,8 @@ searchInput.addEventListener("input", filterPlayers);
 
 teamFilter.addEventListener("change", filterPlayers);
 
+// ==========================
 // START APP
+// ==========================
 
 getPlayers();
