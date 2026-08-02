@@ -6,6 +6,10 @@ async function loadLiveMatches() {
   try {
     const response = await fetch(`${API}/matches`);
 
+    if (!response.ok) {
+      throw new Error("Failed to load matches");
+    }
+
     const matches = await response.json();
 
     const liveMatches = matches.filter((match) => match.status === "Live");
@@ -14,11 +18,9 @@ async function loadLiveMatches() {
 
     if (liveMatches.length === 0) {
       container.innerHTML = `
-
         <p>
           No live matches currently.
         </p>
-
       `;
 
       return;
@@ -39,11 +41,9 @@ async function loadLiveMatches() {
         </p>
 
 
-
         <p>
-          ${match.teamA.name}
+          ${match.teamA?.name || "Unknown Team"}
         </p>
-
 
 
         <h3>
@@ -51,11 +51,9 @@ async function loadLiveMatches() {
         </h3>
 
 
-
         <p>
-          ${match.teamB.name}
+          ${match.teamB?.name || "Unknown Team"}
         </p>
-
 
 
         <div class="balltime">
@@ -63,9 +61,7 @@ async function loadLiveMatches() {
 
           📅 ${date.toLocaleDateString([], {
             day: "numeric",
-
             month: "long",
-
             year: "numeric",
           })}
 
@@ -75,13 +71,11 @@ async function loadLiveMatches() {
 
           ⏰ ${date.toLocaleTimeString([], {
             hour: "2-digit",
-
             minute: "2-digit",
           })}
 
 
         </div>
-
 
 
       `;
