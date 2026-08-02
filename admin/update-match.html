@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Update Match | Elite FC</title>
+
+    <link rel="stylesheet" href="/css/update-match.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>⚽ Update Match</h1>
+    </header>
+
+    <main>
+      <div class="match-card">
+        <h2 id="teams">Loading...</h2>
+
+        <!-- ==========================
+MATCH STATUS
+========================== -->
+
+        <div class="status-area">
+          <label> Match Status </label>
+
+          <select id="matchStatus">
+            <option value="Upcoming">Upcoming</option>
+
+            <option value="Live">🔴 Live</option>
+
+            <option value="Finished">✅ Finished</option>
+          </select>
+        </div>
+
+        <!-- ==========================
+SCORE AREA
+========================== -->
+
+        <div class="score-area">
+          <div class="team-score">
+            <label> Team A Score </label>
+
+            <input type="number" id="teamAScore" min="0" value="0" />
+          </div>
+
+          <div class="team-score">
+            <label> Team B Score </label>
+
+            <input type="number" id="teamBScore" min="0" value="0" />
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- ==========================
+GOAL SECTION
+========================== -->
+
+        <h3>⚽ Add Goal</h3>
+
+        <select id="goalPlayer">
+          <option value="">Select Goal Scorer</option>
+        </select>
+
+        <input
+          type="number"
+          id="goalMinute"
+          placeholder="Goal Minute"
+          min="0"
+        />
+
+        <button id="addGoal">+ Add Goal</button>
+
+        <div id="goalList"></div>
+
+        <!-- ==========================
+SAVE
+========================== -->
+
+        <button id="saveResult">SAVE MATCH UPDATE</button>
+      </div>
+    </main>
+
+    <script src="update-match.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Elite FC Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>⚽ Elite FC Admin</h1>
+
+      <div class="admin-actions">
+        <button id="createMatchBtn">+ Create Match</button>
+
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <h2>Match Control Panel</h2>
+
+        <p>Create fixtures and update match results.</p>
+      </section>
+      <section>
+        <h2>🔴 Live Matches</h2>
+
+        <div id="liveMatches"></div>
+      </section>
+      <section>
+        <h2>🟢 Upcoming Matches</h2>
+
+        <div id="upcomingMatches"></div>
+      </section>
+
+      <section>
+        <h2>✅ Completed Matches</h2>
+
+        <div id="completedMatches"></div>
+      </section>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

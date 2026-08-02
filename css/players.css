@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0b1220;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ==========================
+   REUSABLE
+========================== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 120px 8%;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7, 13, 24, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.logo h2 {
+  color: #00d26a;
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d26a;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.tournament {
+  color: #00d26a;
+  text-align: center;
+}
+
+/* ==========================
+   PLAYERS HEADER
+========================== */
+
+.players-header {
+  margin-top: 90px;
+  padding: 60px 8%;
+  text-align: center;
+  background:
+    linear-gradient(rgba(7, 16, 29, 0.9), rgba(7, 16, 29, 0.9)),
+    url("../images/Elite logo.jpeg") center/300px no-repeat;
+}
+
+.players-header h1 {
+  font-size: 3rem;
+  color: #00d26a;
+  margin-bottom: 10px;
+}
+
+.players-header p {
+  color: #d5d5d5;
+  font-size: 1.1rem;
+}
+
+/* ==========================
+   PLAYERS GRID
+========================== */
+
+.players-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 70px 8%;
+}
+
+/* ==========================
+   PLAYER CARD
+========================== */
+
+.player-card {
+  background: #172033;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.player-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 210, 106, 0.18);
+}
+
+.player-image {
+  background: #101827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.player-image img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00d26a;
+}
+
+.player-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.player-info h2 {
+  color: #00d26a;
+  margin-bottom: 12px;
+}
+
+.player-info p {
+  color: #ddd;
+  margin-bottom: 8px;
+}
+
+.player-stats {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.player-stats span {
+  background: #0b1220;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* ==========================
+   PLAYER SEARCH FILTER
+========================== */
+
+.player-filter {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  padding: 30px 8%;
+
+  flex-wrap: wrap;
+}
+
+.player-filter input,
+.player-filter select {
+  width: 300px;
+
+  padding: 15px 20px;
+
+  border-radius: 30px;
+
+  border: none;
+
+  outline: none;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 1rem;
+
+  background: #172033;
+
+  color: white;
+}
+
+.player-filter input::placeholder {
+  color: #aaa;
+}
+
+.player-filter select {
+  cursor: pointer;
+}
+
+/* Mobile */
+
+/* ==========================
+   FOOTER
+========================== */
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #07101d;
+
+  padding: 40px 8%;
+
+  text-align: center;
+
+  color: #aaa;
+}
+
+footer p {
+  margin-bottom: 15px;
+}
+
+.developer span {
+  color: #00d26a;
+
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #172033;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #00d26a;
+
+  color: #07101d;
+
+  transform: translateY(-5px);
+}
+
+/* ==========================
+   MOBILE PLAYER FILTER
+========================== */
+
+/* @media (max-width: 768px) {
+  .player-filter {
+    width: 100%;
+
+    padding: 30px 5%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+  }
+
+  .player-filter input,
+  .player-filter select {
+    width: 100%;
+
+    max-width: 350px;
+
+    height: 50px;
+
+    font-size: 0.95rem;
+  }
+
+  .team-select .player-filter select {
+    appearance: auto;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .player-filter {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .player-filter select,
+  .player-filter input {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .team-select {
+    appearance: auto;
+
+    min-width: 0;
+
+    max-width: 100%;
+  }
+} */
+
+@media (max-width: 768px) {
+  .player-filter {
+    width: 100%;
+    padding: 30px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+  }
+
+  .player-filter input,
+  .player-filter select {
+    width: 100%;
+    max-width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    font-size: 16px;
+
+    border-radius: 30px;
+  }
+
+  .team-select {
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create Match - Elite FC Admin</title>
+
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>⚽ Elite FC Admin</h1>
+
+      <div class="admin-actions">
+        <button id="backBtn">Back Dashboard</button>
+
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <h2>Create New Match</h2>
+
+        <p>Add a new fixture to the tournament.</p>
+      </section>
+
+      <section class="create-match-form">
+        <label> Team A </label>
+
+        <select id="teamA">
+          <option value="">Select Team A</option>
+        </select>
+
+        <label> Team B </label>
+
+        <select id="teamB">
+          <option value="">Select Team B</option>
+        </select>
+
+        <label> Match Date & Time </label>
+
+        <input type="datetime-local" id="matchDate" />
+
+        <label> Round </label>
+
+        <select id="round">
+          <option value="Group Stage">Group Stage</option>
+
+          <option value="Second Leg">Second Leg</option>
+
+          <option value="Semi Final">Semi Final</option>
+
+          <option value="Final">Final</option>
+        </select>
+
+        <label> Match Number </label>
+
+        <input type="number" id="matchNumber" placeholder="Example: 1" />
+
+        <button id="createMatch">Create Match</button>
+      </section>
+    </main>
+
+    <script src="create-match.js"></script>
+  </body>
+</html>

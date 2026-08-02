@@ -1,0 +1,231 @@
+/* ==========================
+   PLAYER PROFILE PAGE
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0b1220;
+  color: white;
+}
+
+/* ==========================
+   PROFILE SECTION
+========================== */
+
+.profile-page {
+  min-height: 80vh;
+
+  padding: 140px 8% 80px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background:
+    linear-gradient(rgba(7, 16, 29, 0.92), rgba(7, 16, 29, 0.92)),
+    url("../images/Elite logo.jpeg") center/280px no-repeat;
+}
+
+/* ==========================
+   PLAYER CARD
+========================== */
+
+.player-profile {
+  width: 100%;
+
+  max-width: 500px;
+
+  background: #162133;
+
+  border-radius: 18px;
+
+  padding: 40px 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 15px 35px rgba(0, 210, 106, 0.12);
+
+  transition: 0.3s ease;
+}
+
+.player-profile:hover {
+  transform: translateY(-8px);
+}
+
+/* ==========================
+   PLAYER IMAGE
+========================== */
+
+#playerImage {
+  width: 160px;
+
+  height: 160px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 4px solid #00d26a;
+
+  margin-bottom: 25px;
+}
+
+/* ==========================
+   NAME
+========================== */
+
+#playerName {
+  color: #00d26a;
+
+  font-size: 2rem;
+
+  margin-bottom: 10px;
+}
+
+#playerTeam {
+  color: #ddd;
+
+  font-size: 1.1rem;
+
+  margin-bottom: 30px;
+}
+
+/* ==========================
+   PLAYER STATS
+========================== */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.stats div {
+  background: #0b1220;
+
+  padding: 20px 10px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stats h3 {
+  color: #00d26a;
+
+  font-size: 0.9rem;
+
+  margin-bottom: 10px;
+}
+
+.stats p {
+  font-size: 1.8rem;
+
+  font-weight: 700;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+/* ================= FOOTER ================= */
+
+footer {
+  background: #07101d;
+
+  padding: 40px 8%;
+
+  text-align: center;
+
+  color: #aaa;
+}
+
+footer p {
+  margin-bottom: 15px;
+}
+
+.developer span {
+  color: #00d26a;
+
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #172033;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: #00d26a;
+
+  color: #07101d;
+
+  transform: translateY(-5px);
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 120px 5% 60px;
+  }
+
+  .player-profile {
+    padding: 30px 20px;
+  }
+
+  #playerImage {
+    width: 130px;
+
+    height: 130px;
+  }
+
+  #playerName {
+    font-size: 1.6rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

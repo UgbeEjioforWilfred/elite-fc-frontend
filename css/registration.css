@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0b1220;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ==========================
+   REUSABLE
+========================== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 120px 8%;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7, 13, 24, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.logo h2 {
+  color: #00d26a;
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d26a;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.registration-header {
+  margin-top: 100px;
+  padding: 70px 8%;
+  text-align: center;
+
+  background:
+    linear-gradient(rgba(7, 16, 29, 0.9), rgba(7, 16, 29, 0.9)),
+    url("../images/Elite logo.jpeg") center/300px no-repeat;
+}
+
+.registration-header h1 {
+  font-size: 3rem;
+  color: #00d26a;
+}
+
+.registration-header p {
+  color: #ddd;
+  margin-top: 10px;
+}
+
+.registration-container {
+  padding: 70px 8%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.registration-card {
+  background: #172033;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: 0.3s;
+}
+
+.registration-card:hover {
+  transform: translateY(-8px);
+}
+
+.icon {
+  font-size: 40px;
+
+  margin-bottom: 15px;
+}
+
+.registration-card h2 {
+  color: #00d26a;
+
+  margin-bottom: 15px;
+}
+
+.registration-card p {
+  color: #ddd;
+}
+
+.status {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 8px 25px;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+}
+
+.closed {
+  background: #ff3b30;
+
+  color: white;
+}
+
+.upcoming {
+  background: #00d26a;
+
+  color: #07101d;
+}
+
+.coming-soon {
+  grid-column: 1/-1;
+
+  text-align: center;
+
+  background: #07101d;
+
+  padding: 50px;
+
+  border-radius: 20px;
+}
+
+.coming-soon h2 {
+  color: white;
+
+  margin-top: 20px;
+}
+
+.coming-soon p {
+  color: #bbb;
+}
+
+/* LOADING ICON */
+
+.loader {
+  width: 50px;
+
+  height: 50px;
+
+  border: 5px solid rgba(255, 255, 255, 0.2);
+
+  border-top: 5px solid #00d26a;
+
+  border-radius: 50%;
+
+  margin: auto;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #07101d;
+
+  padding: 40px 8%;
+
+  text-align: center;
+
+  color: #aaa;
+}
+
+footer p {
+  margin-bottom: 15px;
+}
+
+.developer span {
+  color: #00d26a;
+
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #172033;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #00d26a;
+
+  color: #07101d;
+
+  transform: translateY(-5px);
+}

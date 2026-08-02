@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #222;
+}
+
+.header {
+  background: #111827;
+  color: #fff;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 22px;
+}
+
+#logoutBtn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#logoutBtn:hover {
+  background: #dc2626;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.welcome {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.welcome h2 {
+  margin-bottom: 8px;
+}
+
+.welcome p {
+  color: #666;
+}
+
+#matchesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.match-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.match-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.match-score {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.match-info {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.update-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .match-teams {
+    font-size: 17px;
+  }
+
+  .match-score {
+    font-size: 22px;
+  }
+}
