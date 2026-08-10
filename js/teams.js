@@ -10,68 +10,50 @@ async function loadTeams() {
 
     container.innerHTML = "";
 
-    teams.forEach((team) => {
-      const teamCard = document.createElement("div");
+    // Sort teams alphabetically
+    teams
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .forEach((team) => {
+        const teamCard = document.createElement("div");
 
-      teamCard.classList.add("team-card");
+        teamCard.classList.add("team-card");
 
-      teamCard.innerHTML = `
+        teamCard.innerHTML = `
+          <div class="team-header">
+            <div>
+              <h2>${team.name}</h2>
 
-                <div class="team-header">
+              <p>
+                Sponsor: ${team.sponsor}
+              </p>
+            </div>
+          </div>
 
-    <div>
+          <div class="players-list">
+            <h3>Players</h3>
 
-        <h2>${team.name}</h2>
+            <ul>
+              ${team.players
+                .map(
+                  (player) => `
+                    <li>
+                      <a href="players.html?id=${player._id}">
+                        ${player.name}
+                      </a>
 
-        <p>
-        Sponsor: ${team.sponsor}
-        </p>
+                      <span>
+                        ⚽ ${player.goals}
+                      </span>
+                    </li>
+                  `,
+                )
+                .join("")}
+            </ul>
+          </div>
+        `;
 
-    </div>
-
-</div>
-
-
-
-                <div class="players-list">
-
-                    <h3>Players</h3>
-
-
-                    <ul>
-
-                    ${team.players
-                      .map(
-                        (player) => `
-
-                            <li>
-
-                               <a href="players.html?id=${player._id}">
-    ${player.name}
-</a>
-
-
-                                <span>
-                                    ⚽ ${player.goals}
-                                </span>
-
-                            </li>
-
-
-                        `,
-                      )
-                      .join("")}
-
-                    </ul>
-
-
-                </div>
-
-
-            `;
-
-      container.appendChild(teamCard);
-    });
+        container.appendChild(teamCard);
+      });
   } catch (error) {
     console.log("Teams Error:", error);
   }
