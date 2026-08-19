@@ -12,12 +12,10 @@ async function loadFixtures() {
 
     const matches = await response.json();
 
-    // Show all upcoming matches
     const upcomingMatches = matches.filter(
       (match) => match.status === "Upcoming",
     );
 
-    // Sort by match number
     upcomingMatches.sort((a, b) => {
       return a.matchNumber - b.matchNumber;
     });
@@ -52,25 +50,29 @@ async function loadFixtures() {
       card.className = "result-card";
 
       card.innerHTML = `
-        <p>
-          ${roundTitle}
-        </p>
+        <div class="match-header">
+          <p class="round-title">
+            ${roundTitle}
+          </p>
 
-        <p>
-          Match #${match.matchNumber || ""}
-        </p>
+          <p class="match-number">
+            Match #${match.matchNumber || ""}
+          </p>
+        </div>
 
-        <p>
-          ${match.teamA?.name || "TBD"}
-        </p>
+        <div class="match-teams">
+          <p class="team-name">
+            ${match.teamA?.name || "TBD"}
+          </p>
 
-        <h3>
-          vs
-        </h3>
+          <h3 class="vs">
+            VS
+          </h3>
 
-        <p>
-          ${match.teamB?.name || "TBD"}
-        </p>
+          <p class="team-name">
+            ${match.teamB?.name || "TBD"}
+          </p>
+        </div>
 
         <div class="balltime">
           📅 ${date.toLocaleDateString([], {
@@ -79,7 +81,7 @@ async function loadFixtures() {
             year: "numeric",
           })}
 
-          <br>
+          <br />
 
           ⏰ ${date.toLocaleTimeString([], {
             hour: "2-digit",
