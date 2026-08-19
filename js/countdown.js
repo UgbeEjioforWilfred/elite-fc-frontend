@@ -1,4 +1,4 @@
-const matchDate = new Date("August 17, 2026 09:00:00").getTime();
+const matchDate = new Date("August 31, 2026 10:30:00").getTime();
 
 const countdown = setInterval(() => {
   const now = new Date().getTime();
